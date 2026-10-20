@@ -1,0 +1,9 @@
+/* Ruhiger Rest: jede Station spricht in der Farbe ihres Logo-Viertels */
+.hero em, #reservieren em, .steps em { color: var(--c-leaf); }
+#speisekarte em { color: var(--c-sun); }
+#blue-zones em { color: var(--c-earth); }
+#mehr em { color: var(--c-fruit); }
+.band em:nth-of-type(4n+1) { color: var(--c-leaf); }
+.band em:nth-of-type(4n+2) { color: var(--c-fruit); }
+.band em:nth-of-type(4n+3) { color: var(--c-sun); }
+.band em:nth-of-type(4n+4) { color: var(--c-earth); }

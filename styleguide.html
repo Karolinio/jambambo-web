@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jambambo Styleguide</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="img/favicon.png">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/booker.css">
+  <link rel="stylesheet" href="css/tray.css">
+  <style>
+    .sg { max-width: 72rem; margin: 0 auto; padding: var(--space-8) var(--gutter); display: grid; gap: var(--space-9); }
+    .sg-head { display: grid; gap: var(--space-4); }
+    .sg-head h1 { font: 600 var(--text-hero) / 0.95 var(--font-display); letter-spacing: var(--tracking-hero); }
+    .sg-head p { max-width: 46ch; font-size: var(--text-lg); color: var(--ink-2); }
+    .sg section { display: grid; gap: var(--space-6); }
+    .sg h2 { font-size: var(--text-2xl); font-weight: 600; max-width: none; }
+    .sg h2 span { color: var(--ink-2); font: 500 var(--text-base) var(--font-text); letter-spacing: 0; margin-left: var(--space-3); }
+    .sg-note { color: var(--ink-2); max-width: 60ch; }
+    .sg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr)); gap: var(--space-4); }
+    .swatch { border-radius: var(--radius-img); overflow: hidden; border: 1px solid var(--line); }
+    .swatch i { display: block; height: 7rem; }
+    .swatch div { padding: var(--space-3) var(--space-4); display: grid; gap: 0.2rem; font-size: var(--text-sm); }
+    .swatch b { font: 600 var(--text-base) var(--font-display); letter-spacing: -0.02em; }
+    .swatch code { color: var(--ink-2); font-size: 0.78rem; }
+    .type-row { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: var(--space-5); align-items: baseline; padding: var(--space-4) 0; border-bottom: 1px solid var(--line); }
+    .type-row small { color: var(--ink-2); }
+    .demo { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; padding: var(--space-6); border-radius: 1.5rem; background: var(--paper-2); }
+    .demo--dark { background: oklch(31% 0.05 155); color: oklch(97% 0.012 120); }
+    .rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: var(--space-5); }
+    .rules article { display: grid; gap: var(--space-2); padding-top: var(--space-4); border-top: 2px solid var(--sage); }
+    .rules article.no { border-top-color: var(--signal); }
+    .rules h3 { font-size: var(--text-lg); font-weight: 600; }
+    .rules p, .rules li { color: var(--ink-2); font-size: var(--text-sm); }
+    .rules ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 0.3rem; }
+    .imgs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-4); }
+    .imgs img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius-img); }
+    .produce { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; }
+    .produce img { height: 5.5rem; width: auto; }
+    .pattern { height: 14rem; border-radius: 1.5rem; background: url("img/brand/ndop.webp") center / 22rem; }
+    .pill-demo { position: static; transform: none; opacity: 1; visibility: visible; }
+    @media (max-width: 52rem) { .imgs { grid-template-columns: repeat(2, minmax(0, 1fr)); } .type-row { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main class="sg">
+    <header class="sg-head">
+      <img src="img/logo-160.webp" width="160" height="160" alt="Jambambo-Logo" style="width:4.5rem;height:4.5rem">
+      <h1>Jambambo <em>Styleguide</em></h1>
+      <p>Blue-Zone-Küche aus Kamerun in Bonn. Ruhig, frisch, eigen – Weiß und Waldgrün, eine afrikanisch gezeichnete Schrift, das Ndop-Muster aus dem Grasland und echte Fotos der Gerichte.</p>
+    </header>
+
+    <section>
+      <h2>Haltung <span>wie wir auftreten</span></h2>
+      <div class="rules">
+        <article><h3>Ruhig statt laut</h3><p>Viel Weiß, eine Akzentfarbe, Farbe als Fläche nur für Kapitel. Nichts blinkt, nichts drängelt.</p></article>
+        <article><h3>Echt statt erfunden</h3><p>Gerichte, Raum und Menschen nur aus echten Jambambo-Fotos. KI-Bilder nur für Zutaten, Muster und Stimmungen – und im Impressum gekennzeichnet.</p></article>
+        <article><h3>Kamerun ohne Klischee</h3><p>Herkunft zeigt sich über Ndop-Muster, Ojuju-Schrift und die Namen der Gerichte – nicht über Savannen, Trommeln oder Kente-Kitsch.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Farben <span>Tokens in css/tokens.css</span></h2>
+      <div class="sg-grid">
+        <div class="swatch"><i style="background:oklch(99% 0.004 120)"></i><div><b>Papier</b><span>Grund jeder Seite</span><code>--paper · oklch(99% 0.004 120)</code></div></div>
+        <div class="swatch"><i style="background:oklch(24% 0.035 155)"></i><div><b>Tinte</b><span>Text, Linien</span><code>--ink · oklch(24% 0.035 155)</code></div></div>
+        <div class="swatch"><i style="background:oklch(36% 0.075 155)"></i><div><b>Waldgrün</b><span>Aktion: Buttons, Auswahl</span><code>--accent · oklch(36% 0.075 155)</code></div></div>
+        <div class="swatch"><i style="background:oklch(31% 0.05 155)"></i><div><b>Kapitel Grün</b><span>Gerichte, Fußzeile</span><code>.chapter--forest</code></div></div>
+        <div class="swatch"><i style="background:oklch(58% 0.075 150)"></i><div><b>Salbei</b><span>zweiter Teil einer Überschrift</span><code>--sage · oklch(58% 0.075 150)</code></div></div>
+        <div class="swatch"><i style="background:oklch(96.4% 0.016 145)"></i><div><b>Salbeihauch</b><span>Speisekarte, Übersichten</span><code>--paper-2</code></div></div>
+      </div>
+      <p class="sg-note">Die bunten Tellerfarben (Grün, Braun, Gelb, Rot) bleiben dem Logo und den Fotos vorbehalten. Rot nie als UI-Farbe – es wirkt klinisch.</p>
+    </section>
+
+    <section>
+      <h2>Schrift <span>Ojuju + General Sans</span></h2>
+      <div>
+        <div class="type-row"><small>Hero · Ojuju 600</small><p style="font:600 clamp(2.6rem,1rem + 5vw,5.5rem)/0.95 var(--font-display);letter-spacing:-0.045em">Blue Zone Küche <em>aus Kamerun.</em></p></div>
+        <div class="type-row"><small>Überschrift · Ojuju 600</small><p style="font:600 var(--text-3xl)/1.02 var(--font-display);letter-spacing:-0.04em">Fünf Gerichte, <em>die du hier zum ersten Mal isst.</em></p></div>
+        <div class="type-row"><small>Gericht · Ojuju 600</small><p style="font:600 var(--text-xl)/1.1 var(--font-display);letter-spacing:-0.03em">Ndolé mit Kochbanane</p></div>
+        <div class="type-row"><small>Text · General Sans 400</small><p style="font-size:var(--text-lg);color:var(--ink-2);max-width:52ch">Kameruns Nationalgericht: Bitterblatt-Gemüse in Erdnusssauce, mit Rind, Garnelen und gebratener Kochbanane.</p></div>
+        <div class="type-row"><small>UI · General Sans 500</small><p style="font:500 0.95rem var(--font-text)">Speisekarte · Blue Zones · Teller reservieren</p></div>
+      </div>
+      <p class="sg-note">Ojuju stammt von nigerianischen Gestaltern (Google Fonts, OFL) – afrikanische Formen im K, a und k, trotzdem ruhig. Überschriften linksbündig, ohne Einrückungstreppe, max. ~20 Zeichen breit. Keine Versalien-Labels, keine Kursive.</p>
+    </section>
+
+    <section>
+      <h2>Bausteine <span>Hover, Fokus, Druck sind überall gestaltet</span></h2>
+      <div class="demo">
+        <a class="btn" href="#">Teller reservieren</a>
+        <a class="btn btn--ghost" href="#">Per E-Mail senden</a>
+        <a class="link" href="#">Speisekarte</a>
+        <button class="add" type="button" aria-label="Hinzufügen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M3 8h10"/></svg><span class="add__n"></span></button>
+        <button class="add is-in" type="button" aria-label="Hinzugefügt"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M3 8h10"/></svg><span class="add__n">2</span></button>
+        <div class="qty"><button type="button">−</button><output>1</output><button type="button">+</button></div>
+      </div>
+      <div class="demo">
+        <button class="tray-pill pill-demo has-items" type="button">
+          <span class="tray-pill__stack"><img src="img/dishes/ndole-480.webp" alt="" width="80" height="80"><img src="img/dishes/jollof-480.webp" alt="" width="80" height="80"></span>
+          <span class="tray-pill__text"><strong>Dein Teller</strong><small>2 Gerichte · 42,00 €</small></span>
+          <span class="tray-pill__go"><svg viewBox="0 0 16 16"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"/></svg></span>
+        </button>
+        <div class="tabs" style="margin:0"><button role="tab" aria-selected="true">Hauptgerichte</button><button role="tab" aria-selected="false">Vegan</button><button role="tab" aria-selected="false">Getränke</button></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Ndop <span>das Markenmuster</span></h2>
+      <div class="pattern" role="img" aria-label="Ndop-Muster in Waldgrün und Weiß"></div>
+      <p class="sg-note">Inspiriert vom Ndop-Stoff des kamerunischen Graslands (Bamileke, Bamum): Eidechsen, Monde, Rauten, Zickzack. Einsatz immer leise – als Bordüre (Fußzeile, Übersicht, Seitenleiste) oder als Textur mit 6–9 % Deckkraft. Nie hinter Text in voller Stärke, nie bunt eingefärbt.</p>
+    </section>
+
+    <section>
+      <h2>Bildsprache <span>rund, hochkant, echt</span></h2>
+      <div class="imgs">
+        <img src="img/dishes/ndole-900.webp" alt="Ndolé" width="900" height="900">
+        <img src="img/dishes/jollof-900.webp" alt="Jollof" width="900" height="900">
+        <img src="img/brand/ingredients-900.webp" alt="Zutaten-Stillleben" width="900" height="1125">
+        <img src="img/brand/table-900.webp" alt="Gedeckter Platz" width="900" height="1125">
+      </div>
+      <div class="produce" aria-label="Freigestellte Zutaten">
+        <img src="img/produce/cabbage.webp" alt=""><img src="img/produce/plantain.webp" alt=""><img src="img/produce/hibiscus.webp" alt=""><img src="img/produce/papaya.webp" alt=""><img src="img/produce/chili.webp" alt=""><img src="img/produce/peanuts.webp" alt="">
+      </div>
+      <div class="rules">
+        <article><h3>Fotos</h3><ul><li>Hochformat 4:5, runde Ecken (<code>--radius-img</code>)</li><li>Einheitlich angeglichen: leichter Weißabgleich, sanfter Kontrast</li><li>Gerichte von oben, Teller füllt das Bild</li></ul></article>
+        <article><h3>Zutaten</h3><ul><li>Freigestellt, Studiolicht von links oben</li><li>Nur im Hero, im Band und an Abschnittsgrenzen</li><li>Immer echte Zutaten der Karte</li></ul></article>
+        <article class="no"><h3>Nicht verwenden</h3><ul><li>KI-Bilder von Gerichten, Gästen oder dem Gastraum</li><li>Erzwungene Kreis-Ausschnitte (Kreis nur für Logo und 3D-Teller)</li><li>Stockfotos mit Afrika-Klischees</li></ul></article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Bewegung <span>drei wiederkehrende Gesten</span></h2>
+      <div class="rules">
+        <article><h3>Alles kommt auf den Teller</h3><p>Hero: Zutaten schweben, weichen der Maus aus und landen beim Scrollen auf ihrem Viertel des Logo-Tellers.</p></article>
+        <article><h3>Teller-Blende</h3><p>Kapitel öffnen sich als runde Kante, die von unten ins Bild wächst – der Teller als Übergang.</p></article>
+        <article><h3>Ruhiges Gleiten</h3><p>Gerichte-Fahrt und Band laufen mit dem Scroll, halten mittig an, damit man lesen kann. Bei reduzierter Bewegung steht alles still.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Sprache <span>so reden wir</span></h2>
+      <div class="rules">
+        <article><h3>Kernworte</h3><ul><li><b>Teller reservieren</b> – nicht „Tisch“</li><li><b>Auf den Punkt</b> – frisch fertig, wenn du kommst</li><li>Du-Form, kurze Sätze</li></ul></article>
+        <article class="no"><h3>Nie</h3><ul><li>„vorgekocht“ (klingt aufgewärmt)</li><li>Erfundene Zahlen, Bewertungen oder Live-Status</li><li>Gesundheitsversprechen über die Blue-Zone-Fakten hinaus</li></ul></article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

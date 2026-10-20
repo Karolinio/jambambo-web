@@ -1,0 +1,99 @@
+/* Jeder Wert ist aus DIRECTION.md (v2) abgeleitet. */
+@font-face {
+  font-family: "Ojuju";
+  src: url("../fonts/ojuju.woff2") format("woff2");
+  font-weight: 200 800; font-style: normal; font-display: swap;
+}
+@font-face { font-family: "General Sans"; src: url("../fonts/general-sans-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "General Sans"; src: url("../fonts/general-sans-500.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "General Sans"; src: url("../fonts/general-sans-600.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+
+:root {
+  /* Eine Tinte auf Cremepapier */
+  --paper: oklch(99% 0.004 120);
+  --paper-2: oklch(99% 0.004 120);
+  --hover: oklch(96% 0.006 120);
+  --ink: oklch(24% 0.035 155);
+  --ink-deep: oklch(18% 0.03 155);
+  --ink-2: oklch(24% 0.035 155 / 0.66);
+  --line: oklch(24% 0.035 155 / 0.12);
+  --line-strong: oklch(24% 0.035 155 / 0.3);
+  --signal: oklch(58% 0.19 30);
+
+  /* Typo — Quarte */
+  --font-display: "Ojuju", ui-sans-serif, system-ui, sans-serif;
+  --font-text: "General Sans", ui-sans-serif, system-ui, sans-serif;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  --text-lg: clamp(1.125rem, 1.05rem + 0.35vw, 1.3rem);
+  --text-xl: clamp(1.4rem, 1.2rem + 0.9vw, 1.9rem);
+  --text-2xl: clamp(1.9rem, 1.4rem + 2.2vw, 3rem);
+  --text-3xl: clamp(2.2rem, 1.3rem + 3.2vw, 4rem);
+  --text-hero: clamp(3rem, 1rem + 6.2vw, 7.6rem);
+  --tracking-display: -0.03em;
+  --tracking-caps: 0.08em;
+
+  /* Raum */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: clamp(4rem, 3rem + 4vw, 7.5rem);
+  --space-9: clamp(6rem, 3rem + 9vw, 12rem);
+  --gutter: clamp(1.25rem, 0.5rem + 3vw, 3.5rem);
+  --wide: 84rem;
+  --measure: 56ch;
+
+  /* Form */
+  --radius: 3px;
+  --radius-img: clamp(0.9rem, 0.6rem + 0.8vw, 1.5rem);
+  --radius-sm: 0.75rem;
+  --btn-radius: 999px;
+  --btn-weight: 500;
+  --btn-size: 0.95rem;
+  --btn-tracking: -0.005em;
+  --btn-case: none;
+
+  /* Rollen (Stile überschreiben nur diese) */
+  /* Die vier Tellerfarben aus dem Logo – jede mit Bedeutung:
+     Grün = Gemüse/vegan, Erdbraun = Getreide & Knollen, Gelb = Eiweiß/Pilze, Rot = Obst – und die Aktion */
+  --leaf: oklch(60% 0.14 142);
+  --earth: oklch(58% 0.055 68);
+  --sun: oklch(79% 0.15 80);
+  --sun-text: oklch(62% 0.14 70);
+  --tomato: oklch(57% 0.19 29);
+  --sage: oklch(58% 0.075 150);
+  --sage-soft: oklch(93% 0.03 145);
+  /* Logo-Viertel, für Text auf Creme abgedunkelt – je Abschnitt eine Farbe */
+  --c-leaf: oklch(52% 0.13 142);
+  --c-earth: oklch(50% 0.07 65);
+  --c-sun: oklch(62% 0.14 72);
+  --c-fruit: oklch(55% 0.17 30);
+  --c-body: oklch(56% 0.08 285);
+  --lavender: oklch(58% 0.07 285);
+  --plate-stripe: linear-gradient(90deg, var(--leaf) 0 37.5%, var(--earth) 37.5% 62.5%, var(--sun) 62.5% 87.5%, var(--tomato) 87.5% 100%);
+
+  --accent: oklch(36% 0.075 155);
+  --accent-deep: oklch(29% 0.065 155);
+  --on-accent: oklch(99% 0.004 120);
+  --footer-bg: oklch(99% 0.004 120);
+  --footer-fg: oklch(34% 0.07 155);
+  --shadow-strong: oklch(24% 0.04 155 / 0.28);
+  --font-italic: var(--font-display);
+  --w-light: 500;
+  --w-display: 500;
+  --w-italic: 500;
+  --tracking-hero: -0.045em;
+
+  /* Trennlinie: ruhige Haarlinie */
+  --perf: 1px solid var(--line);
+
+  /* Bewegung */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-ui: 240ms;
+  --dur-reveal: 1000ms;
+}

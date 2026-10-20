@@ -1,0 +1,259 @@
+/* Abschnitte in Lesereihenfolge. v7: Weiß + Waldgrün/Salbei, gerade Bildkanten, Ojuju/General Sans. */
+
+/* ---------- Gemeinsames ---------- */
+/* Überschriften fließen linksbündig; der zweite Teil trägt nur die Salbei-Farbe */
+.stagger .line { display: inline; }
+h2 { max-width: 20ch; line-height: 1.02; letter-spacing: -0.04em; }
+[data-words] .w { display: inline-block; }
+
+/* Kapitel: Grünfläche mit hellem Text */
+.chapter--forest {
+  --paper: oklch(31% 0.05 155);
+  --paper-2: oklch(27% 0.045 155);
+  --ink: oklch(97% 0.012 120);
+  --ink-deep: oklch(100% 0 0);
+  --ink-2: oklch(97% 0.012 120 / 0.72);
+  --line: oklch(97% 0.012 120 / 0.16);
+  --line-strong: oklch(97% 0.012 120 / 0.4);
+  --sage: oklch(82% 0.07 145);
+  --shadow-strong: oklch(10% 0.03 155 / 0.5);
+  background: var(--paper); color: var(--ink);
+}
+
+/* ---------- Hero ---------- */
+.hero { position: relative; }
+.hero__stage { position: relative; height: 100svh; min-height: 36rem; overflow: hidden; }
+.hero__title {
+  position: absolute; z-index: 1; left: var(--gutter); top: clamp(7rem, 18vh, 11rem); max-width: none;
+  font-size: var(--text-hero); font-weight: 600; line-height: 0.95; letter-spacing: var(--tracking-hero);
+}
+.hero__title .line { display: block; }
+.hero__canvas { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; display: block; touch-action: pan-y; }
+.hero__foot {
+  position: absolute; z-index: 3; left: var(--gutter); bottom: clamp(1.5rem, 5vh, 3.5rem);
+  display: grid; gap: var(--space-5); max-width: 27rem;
+}
+.hero__lead { font-size: var(--text-lg); line-height: 1.45; color: var(--ink-2); }
+.hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-5); }
+.hero__promise {
+  position: absolute; z-index: 3; left: 50%; bottom: clamp(1.5rem, 6vh, 4rem);
+  display: grid; justify-items: center; gap: var(--space-5); width: min(40rem, 100% - 2 * var(--gutter));
+  text-align: center; translate: -50% 0; opacity: 0; visibility: hidden;
+}
+.no-hero-motion .hero__promise { display: none; }
+.hero__promise-title { font: 600 var(--text-2xl) / 1.05 var(--font-display); letter-spacing: -0.035em; }
+.hero__fallback { position: absolute; inset: 0; z-index: 2; }
+.has-webgl .hero__fallback { display: none; }
+.hero__plate { position: absolute; width: min(34vw, 30rem); right: 12vw; top: 50%; translate: 0 -50%; border-radius: 50%; }
+.fb { position: absolute; width: clamp(5rem, 9vw, 9rem); }
+.fb--1 { right: 40vw; top: 22%; } .fb--2 { right: 5vw; top: 18%; } .fb--3 { right: 30vw; bottom: 12%; rotate: -20deg; }
+.fb--4 { right: 4vw; bottom: 20%; } .fb--5 { right: 44vw; top: 56%; } .fb--6 { right: 18vw; top: 10%; rotate: 30deg; }
+@media (max-width: 52rem) {
+  .hero__title { top: auto; bottom: 13.5rem; font-size: clamp(2.8rem, 13vw, 4.2rem); }
+  .hero__foot { right: var(--gutter); max-width: none; }
+  .hero__lead { display: none; }
+  .hero__plate { width: 64vw; right: 18vw; top: 32%; }
+  .fb { width: 18vw; }
+}
+
+/* ---------- Gerichte-Fahrt (Kapitel Grün) ---------- */
+.ride { position: relative; }
+.ride__pin { height: 100svh; min-height: 38rem; display: grid; grid-template-rows: auto 1fr; padding: clamp(5.5rem, 12vh, 8rem) 0 var(--space-5); overflow: hidden; }
+.ride__title { padding-inline: var(--gutter); font-size: var(--text-3xl); font-weight: 600; max-width: calc(16ch + 2 * var(--gutter)); }
+.ride__track {
+  list-style: none; margin: 0; padding: 0 var(--gutter);
+  display: flex; align-items: center; gap: clamp(1.5rem, 3.5vw, 4rem);
+  width: max-content; will-change: transform;
+}
+.dish-card { width: clamp(14rem, min(21vw, 31svh), 21rem); display: grid; gap: var(--space-3); }
+.dish-card__plate {
+  width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius-img);
+  transition: scale 900ms var(--ease);
+}
+.dish-card:hover .dish-card__plate { scale: 1.03; }
+.dish-card__text { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-4); padding-top: var(--space-2); }
+.dish-card h3 { font-size: var(--text-xl); font-weight: 600; transition: translate 500ms var(--ease); }
+.dish-card:hover h3 { translate: 4px 0; }
+.dish-card .price { font: 500 var(--text-base) / 1 var(--font-text); color: var(--ink-2); }
+.dish-card p { color: var(--ink-2); font-size: var(--text-sm); max-width: 34ch; }
+@media (max-width: 52rem), (prefers-reduced-motion: reduce) {
+  .ride__pin { height: auto; min-height: 0; padding-bottom: var(--space-8); }
+  .ride__track { width: auto; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter); padding-top: var(--space-7); padding-bottom: var(--space-5); scrollbar-width: none; }
+  .dish-card { flex: none; width: min(74vw, 20rem); scroll-snap-align: start; }
+}
+
+/* ---------- Gerichte-Band ---------- */
+.band { overflow: hidden; padding: var(--space-7) 0; background: var(--paper); }
+.band__track { display: flex; width: max-content; will-change: transform; }
+.band__run { display: flex; align-items: center; gap: clamp(1.25rem, 2.5vw, 3rem); padding-right: clamp(1.25rem, 2.5vw, 3rem); }
+.band span, .band em {
+  font: 600 clamp(3.8rem, 1.5rem + 8.5vw, 11rem) / 1 var(--font-display);
+  letter-spacing: -0.05em; white-space: nowrap; font-style: normal;
+}
+.band em { color: var(--sage); }
+.band img { height: clamp(3.5rem, 1rem + 7vw, 9rem); width: auto; flex: none; transition: rotate 900ms var(--ease), scale 600ms var(--ease); }
+.band img:nth-of-type(odd) { rotate: -14deg; }
+.band img:nth-of-type(even) { rotate: 12deg; }
+.band img:hover { rotate: 0deg; scale: 1.25; }
+@media (prefers-reduced-motion: reduce) { .band { overflow-x: auto; } }
+
+/* ---------- Drei Schritte ---------- */
+.steps {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 6vw, 7rem);
+  max-width: calc(var(--wide) + 2 * var(--gutter)); margin: 0 auto; padding: var(--space-8) var(--gutter);
+}
+.steps__visual { position: sticky; top: 0; height: 100svh; display: grid; place-items: center; }
+.steps__visual img {
+  grid-area: 1 / 1; width: min(100%, 30rem); aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius-img);
+  opacity: 0; scale: 0.96; transition: opacity 700ms var(--ease), scale 1000ms var(--ease);
+}
+.steps__visual img.is-active { opacity: 1; scale: 1; }
+.steps__title { font-size: var(--text-3xl); font-weight: 600; padding-top: 22vh; max-width: 14ch; }
+.steps__list { list-style: none; margin: 0; padding: 0; }
+.steps__list li { min-height: 62svh; display: grid; align-content: center; gap: var(--space-3); border-bottom: var(--perf); opacity: 0.28; transition: opacity 600ms var(--ease); }
+.steps__list li.is-active { opacity: 1; }
+.steps__num { font: 500 var(--text-sm) / 1 var(--font-text); color: var(--sage); }
+.steps__list h3 { font-size: var(--text-2xl); font-weight: 600; }
+.steps__list p { color: var(--ink-2); font-size: var(--text-lg); max-width: 32ch; }
+@media (max-width: 52rem) {
+  .steps { grid-template-columns: 1fr; }
+  .steps__visual { position: relative; height: auto; order: 2; }
+  .steps__visual img:not(:first-child) { display: none; }
+  .steps__visual img:first-child { opacity: 1; scale: 1; }
+  .steps__title { padding-top: 0; }
+  .steps__list li { min-height: 0; padding: var(--space-6) 0; opacity: 1; }
+}
+
+/* ---------- Speisekarte (Kapitel Salbei) ---------- */
+.menu { position: relative; padding: var(--space-9) var(--gutter) var(--space-8); }
+.menu > * { max-width: var(--wide); margin-inline: auto; }
+.menu__head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 24rem); align-items: end; gap: var(--space-6); }
+.menu__head h2 { font-size: var(--text-3xl); font-weight: 600; }
+.menu__head p { color: var(--ink-2); font-size: var(--text-lg); }
+.tabs { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-7); }
+.tabs [role="tab"] {
+  padding: 0.7rem 1.15rem; border: 1px solid var(--line-strong); border-radius: 999px; background: transparent; color: var(--ink); cursor: pointer;
+  font: 500 0.95rem / 1 var(--font-text);
+  transition: background-color var(--dur-ui) var(--ease), color var(--dur-ui) var(--ease), border-color var(--dur-ui) var(--ease);
+}
+.tabs [role="tab"]:hover { border-color: var(--ink); }
+.tabs [role="tab"][aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.menu__panel { padding-top: var(--space-5); }
+.menu__panel:focus-visible { outline-offset: 6px; }
+.dishes { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--space-8); }
+.dishes li {
+  display: grid; grid-template-columns: 4.25rem minmax(0, 1fr) auto; gap: 0.25rem var(--space-4); align-items: center;
+  padding: var(--space-4) 0; border-bottom: var(--perf);
+}
+.dishes li:not(:has(img)) { grid-template-columns: minmax(0, 1fr) auto; }
+.dishes li img { width: 4.25rem; height: 4.25rem; object-fit: cover; border-radius: var(--radius-sm); transition: scale 500ms var(--ease); }
+.dishes li:hover img { scale: 1.08; }
+.dishes h3 { font: 600 var(--text-lg) / 1.2 var(--font-display); letter-spacing: -0.02em; transition: color var(--dur-ui) var(--ease); }
+.dishes h3 small { font: 400 var(--text-sm) var(--font-text); color: var(--ink-2); letter-spacing: 0; }
+.dishes li:hover h3 { color: var(--accent); }
+.dishes p { color: var(--ink-2); font-size: var(--text-sm); margin-top: 0.2rem; }
+.dishes .price { font: 500 var(--text-base) / 1 var(--font-text); text-align: right; }
+.menu__preview {
+  position: fixed; left: 0; top: 0; z-index: 40; width: 15rem; max-width: none; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius-img);
+  pointer-events: none; opacity: 0; scale: 0.7;
+  transition: opacity 300ms var(--ease), scale 500ms var(--ease);
+  box-shadow: 0 30px 60px -30px var(--shadow-strong);
+}
+.menu__preview.is-on { opacity: 1; scale: 1; }
+.menu__focus { display: none; }
+@media (max-width: 52rem) {
+  .menu__head { grid-template-columns: 1fr; }
+  .dishes { grid-template-columns: 1fr; }
+  .dishes li { grid-template-columns: 3.5rem minmax(0, 1fr) auto; }
+  .dishes li img { width: 3.5rem; height: 3.5rem; }
+  .tabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); }
+  .tabs [role="tab"] { white-space: nowrap; }
+  .menu__preview { display: none; }
+}
+
+/* ---------- Konzept ---------- */
+.konzept {
+  position: relative; max-width: calc(var(--wide) + 2 * var(--gutter)); margin: 0 auto; padding: var(--space-9) var(--gutter);
+  display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr); gap: clamp(2rem, 7vw, 8rem); align-items: center;
+}
+.konzept__poster { margin: 0; }
+.konzept__poster img { border-radius: var(--radius-img); box-shadow: 0 0 0 1px var(--line), 0 50px 80px -50px var(--shadow-strong); }
+.konzept__text { display: grid; gap: var(--space-5); }
+.konzept__text h2 { font-weight: 600; }
+.konzept__text > p { color: var(--ink-2); font-size: var(--text-lg); max-width: var(--measure); }
+.pillars { margin: var(--space-5) 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); }
+.pillars div { padding-top: var(--space-4); border-top: 2px solid var(--sage); }
+.pillars dt { font: 600 var(--text-lg) / 1.2 var(--font-display); letter-spacing: -0.02em; }
+.pillars dd { margin: var(--space-2) 0 0; color: var(--ink-2); font-size: var(--text-sm); }
+@media (max-width: 52rem) {
+  .konzept { grid-template-columns: 1fr; }
+  .konzept__poster { max-width: 24rem; }
+  .pillars { grid-template-columns: 1fr; }
+}
+
+/* ---------- Teller reservieren: Kopf ---------- */
+.reserve { position: relative; padding: var(--space-8) var(--gutter) var(--space-9); }
+.reserve > * { max-width: var(--wide); margin-inline: auto; }
+.reserve__head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 26rem); gap: var(--space-6); align-items: end; }
+.reserve__head h2 { font-size: var(--text-3xl); font-weight: 600; }
+.reserve__head p { color: var(--ink-2); }
+.reserve__status { min-height: 1.5em; color: var(--ink-2); font-size: var(--text-sm); }
+.reserve__status.is-error { color: var(--signal); }
+.fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-6); }
+.field--wide { grid-column: 1 / -1; }
+@media (max-width: 52rem) { .reserve__head { grid-template-columns: 1fr; } }
+
+/* ---------- Mehr als ein Restaurant ---------- */
+.more { padding: var(--space-8) var(--gutter); border-top: var(--perf); text-align: center; }
+.more > * { max-width: var(--wide); margin-inline: auto; }
+.more h2 { font-weight: 600; margin-inline: auto; }
+.more__grid { margin-top: var(--space-7); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-6); text-align: left; }
+.offer { display: flex; flex-direction: column; gap: var(--space-3); }
+.offer__media { overflow: hidden; border-radius: var(--radius-img); }
+.offer__media img { aspect-ratio: 4 / 5; width: 100%; object-fit: cover; transition: scale 1200ms var(--ease); }
+.offer:hover .offer__media img { scale: 1.05; }
+.offer h3 { margin-top: var(--space-2); font-weight: 600; transition: translate 500ms var(--ease); }
+.offer:hover h3 { translate: 4px 0; }
+.offer p { color: var(--ink-2); flex: 1; }
+.offer .link { align-self: flex-start; }
+@media (max-width: 52rem) { .more__grid { grid-template-columns: 1fr; } .offer__media img { aspect-ratio: 4 / 3; } }
+
+/* ---------- Besuch ---------- */
+.visit { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: stretch; background: var(--paper-2); }
+.visit__photo { overflow: hidden; min-height: 32rem; }
+.visit__photo img { width: 100%; height: 115%; object-fit: cover; }
+.visit__info { display: grid; align-content: center; justify-items: start; gap: var(--space-5); padding: var(--space-8) var(--gutter); }
+.visit h2 { font-size: var(--text-3xl); font-weight: 600; }
+.visit__city { margin-top: calc(var(--space-3) * -1); font-size: var(--text-lg); color: var(--ink-2); }
+.hours { margin: var(--space-2) 0 0; width: 100%; max-width: 26rem; }
+.hours div { display: flex; justify-content: space-between; gap: var(--space-4); padding: var(--space-3) 0; border-bottom: var(--perf); }
+.hours dt, .hours dd { margin: 0; }
+.hours dd { font-weight: 500; font-variant-numeric: tabular-nums; }
+.contact { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); font: 500 var(--text-lg) / 1.3 var(--font-text); }
+.contact a { text-decoration: none; background: linear-gradient(currentColor, currentColor) 0 100% / 0% 1px no-repeat; transition: background-size var(--dur-ui) var(--ease); }
+.contact a:hover { background-size: 100% 1px; }
+@media (max-width: 52rem) { .visit { grid-template-columns: 1fr; } .visit__photo { min-height: 18rem; } }
+
+/* ---------- Schwebende Zutaten an Abschnittsgrenzen ---------- */
+.drift { position: absolute; z-index: 1; width: clamp(5.5rem, 10vw, 10rem); height: auto; pointer-events: none; }
+.drift--konzept { top: -4rem; left: 42%; }
+.drift--menu { top: 3rem; right: 6%; }
+.drift--reserve { top: 1rem; right: 34%; }
+@media (max-width: 52rem) {
+  .drift { width: 4.5rem; }
+  .drift--konzept { left: auto; right: 6%; top: -2.5rem; }
+  .drift--reserve { right: 8%; top: -1rem; }
+}
+
+/* ---------- Ndop: Markenmuster aus dem kamerunischen Grasland ----------
+   Nur als leise Textur (Linien-Maske in der Textfarbe), nie als Fotostreifen.
+   Grüne Flächen: helle Linien. Cremefarbene Flächen: Linien in leichtem Grün. */
+main, .site-footer, .chapter--forest, .visit__info { position: relative; isolation: isolate; }
+main::before, .site-footer::after, .chapter--forest::after, .visit__info::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: currentColor; opacity: 0.06;
+  -webkit-mask: url("../img/brand/ndop-lines.webp") 0 0 / 34rem repeat;
+          mask: url("../img/brand/ndop-lines.webp") 0 0 / 34rem repeat;
+}
+main::before, .visit__info::after { background: oklch(45% 0.09 150); opacity: 0.07; }
+.site-footer::after { opacity: 0.08; }

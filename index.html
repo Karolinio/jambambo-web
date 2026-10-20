@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jambambo – Kamerunische Blue-Zone-Küche in Bonn-Bad Godesberg</title>
+  <meta name="description" content="Jambambo in Bonn-Bad Godesberg: frisch gekochte kamerunische Küche nach dem Vorbild der Blue Zones. Teller reservieren – sag uns, wann du kommst, und dein Essen ist auf den Punkt fertig.">
+  <meta name="robots" content="noindex, nofollow">
+  <!-- Entwurf: vor dem Livegang auf jambambo.com.de wieder canonical setzen und noindex entfernen -->
+  <meta property="og:title" content="Jambambo – Teller reservieren">
+  <meta property="og:description" content="Kamerunische Blue-Zone-Küche in Bonn-Bad Godesberg. Sag uns, wann du kommst – dein Teller ist auf den Punkt fertig.">
+  <meta property="og:image" content="https://karolinio.github.io/jambambo-web/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://karolinio.github.io/jambambo-web/">
+  <meta property="og:type" content="restaurant">
+  <meta name="theme-color" content="#f7f3ea">
+  <link rel="icon" href="img/favicon.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="preload" href="fonts/ojuju.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/general-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="img/logo-640.webp" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/booker.css">
+  <link rel="stylesheet" href="css/tray.css">
+  <link rel="stylesheet" href="css/accents.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Jambambo",
+    "description": "Kamerunisches, von den Blue Zones inspiriertes Restaurant mit Gesundheitscoaching.",
+    "servesCuisine": ["Kamerunisch", "Afrikanisch", "Vegan", "Gesund"],
+    "address": {"@type": "PostalAddress", "streetAddress": "Burgstraße 60", "postalCode": "53177", "addressLocality": "Bonn", "addressCountry": "DE"},
+    "telephone": "+49 228 94495522",
+    "email": "info@jambambo.com.de",
+    "url": "https://jambambo.com.de/",
+    "menu": "https://jambambo.com.de/#speisekarte",
+    "acceptsReservations": true,
+    "priceRange": "€€",
+    "openingHoursSpecification": [
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "17:00", "closes": "22:00"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "12:00", "closes": "22:00"}
+    ],
+    "sameAs": ["https://www.instagram.com/jambamborestaubar/", "https://www.facebook.com/profile.php?id=61586997204066"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header" data-header>
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a class="brand" href="#top" aria-label="Jambambo – zum Seitenanfang">
+        <img src="img/logo-160.webp" width="160" height="160" alt="">
+        <span>Jambambo</span>
+      </a>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#kueche">Küche</a></li>
+        <li><a href="#speisekarte">Speisekarte</a></li>
+        <li><a href="#mehr">Catering</a></li>
+        <li><a href="#besuch">Besuch</a></li>
+      </ul>
+      <a class="btn btn--sm nav__cta" href="#reservieren">Teller reservieren</a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-links" data-nav-toggle>
+        <span class="visually-hidden">Menü öffnen</span><i></i><i></i>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO: Zutaten schweben, beim Scrollen landen sie auf dem Teller -->
+    <section class="hero" id="top" aria-labelledby="hero-title" data-hero>
+      <div class="hero__stage" data-hero-stage>
+        <h1 id="hero-title" class="hero__title" data-hero-title>
+          <span class="line">Blue Zone</span>
+          <span class="line">Küche <em>aus</em></span>
+          <span class="line"><em>Kamerun.</em></span>
+        </h1>
+
+        <canvas class="hero__canvas" data-hero-canvas aria-hidden="true"></canvas>
+
+        <div class="hero__fallback" data-hero-fallback aria-hidden="true">
+          <img class="hero__plate" src="img/logo-640.webp" srcset="img/logo-640.webp 640w, img/logo-1100.webp 1100w" sizes="(min-width: 60rem) 30vw, 62vw" width="640" height="640" alt="" fetchpriority="high">
+          <img class="fb fb--1" src="img/produce/cabbage.webp" alt="" width="260" height="260">
+          <img class="fb fb--2" src="img/produce/papaya.webp" alt="" width="260" height="260">
+          <img class="fb fb--3" src="img/produce/plantain.webp" alt="" width="260" height="260">
+          <img class="fb fb--4" src="img/produce/hibiscus.webp" alt="" width="260" height="260">
+          <img class="fb fb--5" src="img/produce/mushroom.webp" alt="" width="260" height="260">
+          <img class="fb fb--6" src="img/produce/chili.webp" alt="" width="260" height="260">
+        </div>
+
+        <div class="hero__foot" data-hero-foot>
+          <p class="hero__lead">Gekocht nach dem Vorbild der Regionen, in denen Menschen am längsten gesund leben. In Bad Godesberg, am Fuß des Godesbergs.</p>
+          <div class="hero__actions">
+            <a class="btn" href="#reservieren">Teller reservieren</a>
+            <a class="link" href="#speisekarte">Speisekarte</a>
+          </div>
+        </div>
+
+        <div class="hero__promise" data-hero-promise>
+          <p class="hero__promise-title">Sag uns, wann du kommst.<br><em>Dein Teller ist auf den Punkt fertig.</em></p>
+          <a class="btn" href="#reservieren">Teller reservieren</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GERICHTE: horizontale Fahrt, Teller drehen sich -->
+    <section class="ride chapter chapter--forest" id="kueche" aria-labelledby="kueche-title" data-ride data-blende>
+      <div class="ride__pin" data-ride-pin>
+        <h2 id="kueche-title" class="ride__title stagger"><span class="line">Fünf Gerichte,</span> <span class="line"><em>die du hier zum</em></span> <span class="line"><em>ersten Mal isst.</em></span></h2>
+        <ol class="ride__track" data-ride-track>
+          <li class="dish-card">
+            <img class="dish-card__plate" src="img/dishes/ndole-900.webp" width="900" height="900" loading="lazy" alt="Ndolé mit Rindfleisch und gebratener Kochbanane">
+            <div class="dish-card__text"><h3>Ndolé</h3><span class="price">22 €</span></div>
+            <p>Kameruns Nationalgericht: Bitterblatt-Gemüse in Erdnusssauce, mit Rind, Garnelen und gebratener Kochbanane.</p>
+          </li>
+          <li class="dish-card">
+            <img class="dish-card__plate" src="img/dishes/yam-fufu-eru-900.webp" width="900" height="900" loading="lazy" alt="Eru-Blattgemüse mit weißem Yam-Fufu">
+            <div class="dish-card__text"><h3>Eru &amp; Yam-Fufu</h3><span class="price">22 €</span></div>
+            <p>Fein geschnittenes Eru-Blattgemüse mit Spinat und Palmöl, dazu weißes Yam-Fufu zum Eintunken.</p>
+          </li>
+          <li class="dish-card">
+            <img class="dish-card__plate" src="img/dishes/ekwang-900.webp" width="900" height="900" loading="lazy" alt="Ekwang: in Blätter gerollte Cocoyam in Palmölsauce">
+            <div class="dish-card__text"><h3>Ekwang</h3><span class="price">18 €</span></div>
+            <p>Geriebene Cocoyam, in Blätter gerollt und in Palmölsauce mit Weißkohl, Spinat, Rind und Garnelen gegart.</p>
+          </li>
+          <li class="dish-card">
+            <img class="dish-card__plate" src="img/dishes/egusi-900.webp" width="900" height="900" loading="lazy" alt="Egusi-Pudding mit Kochbanane und frischem Gemüse">
+            <div class="dish-card__text"><h3>Egusi-Pudding</h3><span class="price">25 €</span></div>
+            <p>Gemahlene Melonenkerne, gedämpft mit Rind und frischem Gemüse, serviert mit Kochbanane.</p>
+          </li>
+          <li class="dish-card">
+            <img class="dish-card__plate" src="img/dishes/jollof-900.webp" width="900" height="900" loading="lazy" alt="Würziger Jollof-Reis mit Hähnchen">
+            <div class="dish-card__text"><h3>Jollof-Reis</h3><span class="price">ab 20 €</span></div>
+            <p>Westafrikas Festtagsreis, in würziger Tomatensauce gegart – mit Hähnchen oder Rind.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- BAND: Gerichtnamen mit Zutaten dazwischen, läuft mit dem Scroll -->
+    <section class="band" aria-label="Gerichte bei Jambambo">
+      <div class="band__track" data-band>
+        <div class="band__run"><span>Ndolé</span><img src="img/produce/chili.webp" alt="" width="200" height="200" loading="lazy"><em>Eru</em><img src="img/produce/okra.webp" alt="" width="200" height="200" loading="lazy"><span>Ekwang</span><img src="img/produce/cocoyam.webp" alt="" width="200" height="200" loading="lazy"><em>Egusi</em><img src="img/produce/peanuts.webp" alt="" width="200" height="200" loading="lazy"><span>Jollof</span><img src="img/produce/tomatoes.webp" alt="" width="200" height="200" loading="lazy"><em>Kokki</em><img src="img/produce/plantain.webp" alt="" width="200" height="200" loading="lazy"><span>Bissap</span><img src="img/produce/hibiscus.webp" alt="" width="200" height="200" loading="lazy"><em>Fufu</em><img src="img/produce/yam.webp" alt="" width="200" height="200" loading="lazy"></div>
+        <div class="band__run" aria-hidden="true"><span>Ndolé</span><img src="img/produce/chili.webp" alt="" width="200" height="200" loading="lazy"><em>Eru</em><img src="img/produce/okra.webp" alt="" width="200" height="200" loading="lazy"><span>Ekwang</span><img src="img/produce/cocoyam.webp" alt="" width="200" height="200" loading="lazy"><em>Egusi</em><img src="img/produce/peanuts.webp" alt="" width="200" height="200" loading="lazy"><span>Jollof</span><img src="img/produce/tomatoes.webp" alt="" width="200" height="200" loading="lazy"><em>Kokki</em><img src="img/produce/plantain.webp" alt="" width="200" height="200" loading="lazy"><span>Bissap</span><img src="img/produce/hibiscus.webp" alt="" width="200" height="200" loading="lazy"><em>Fufu</em><img src="img/produce/yam.webp" alt="" width="200" height="200" loading="lazy"></div>
+      </div>
+    </section>
+
+    <!-- SO FUNKTIONIERT TELLER RESERVIEREN -->
+    <section class="steps" aria-labelledby="steps-title" data-steps>
+      <div class="steps__visual" data-steps-visual>
+        <img class="is-active" src="img/brand/ingredients-900.webp" width="900" height="1125" loading="lazy" alt="Zutaten für Ndolé: Bitterblatt, Kochbananen, Erdnüsse, Palmöl, Flusskrebse">
+        <img src="img/brand/table-900.webp" width="900" height="1125" loading="lazy" alt="Ein gedeckter Platz wartet">
+        <img src="img/dishes/ndole-900.webp" width="900" height="900" loading="lazy" alt="Ndolé mit Kochbanane">
+      </div>
+      <div class="steps__copy">
+        <h2 id="steps-title" class="steps__title stagger"><span class="line">Teller reservieren.</span> <span class="line"><em>Ankommen. Essen.</em></span></h2>
+        <ol class="steps__list">
+          <li data-step>
+            <span class="steps__num">01</span>
+            <h3>Wähle dein Gericht.</h3>
+            <p>Aus der Karte – oder sag uns einfach, worauf du Lust hast.</p>
+          </li>
+          <li data-step>
+            <span class="steps__num">02</span>
+            <h3>Sag uns, wann du kommst.</h3>
+            <p>Per WhatsApp oder E-Mail. Wir bestätigen persönlich.</p>
+          </li>
+          <li data-step>
+            <span class="steps__num">03</span>
+            <h3>Setz dich. Dein Teller kommt.</h3>
+            <p>Frisch gekocht und auf den Punkt fertig – ohne Wartezeit.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- SPEISEKARTE -->
+    <section class="menu" id="speisekarte" aria-labelledby="menu-title">
+      <img class="drift drift--menu" data-drift="40" src="img/produce/chili.webp" alt="" width="200" height="200" loading="lazy">
+      <header class="menu__head">
+        <h2 id="menu-title">Speisekarte</h2>
+        <p>Alles frisch gekocht. Säfte, Limonaden und Bissap machen wir selbst – gesüßt mit Datteln.</p>
+      </header>
+
+      <div class="tabs" role="tablist" aria-label="Kategorien der Speisekarte" data-tabs>
+        <button role="tab" id="tab-haupt" aria-controls="panel-haupt" aria-selected="true">Hauptgerichte</button>
+        <button role="tab" id="tab-vegan" aria-controls="panel-vegan" aria-selected="false" tabindex="-1">Vegan</button>
+        <button role="tab" id="tab-vor" aria-controls="panel-vor" aria-selected="false" tabindex="-1">Suppen &amp; Salate</button>
+        <button role="tab" id="tab-kinder" aria-controls="panel-kinder" aria-selected="false" tabindex="-1">Kinder</button>
+        <button role="tab" id="tab-snacks" aria-controls="panel-snacks" aria-selected="false" tabindex="-1">Snacks &amp; Desserts</button>
+        <button role="tab" id="tab-drinks" aria-controls="panel-drinks" aria-selected="false" tabindex="-1">Getränke</button>
+      </div>
+
+      <div class="menu__panel" role="tabpanel" id="panel-haupt" aria-labelledby="tab-haupt" tabindex="0">
+        <ul class="dishes">
+          <li data-preview="img/dishes/ndole-900.webp"><img src="img/dishes/ndole-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Ndolé mit Kochbanane</h3><p>Bitterblatt (Vernonia), Spinat, Erdnuss, Rind, kleine getrocknete Garnelen</p></div><span class="price">22,00 €</span></li>
+          <li data-preview="img/dishes/yam-fufu-eru-900.webp"><img src="img/dishes/yam-fufu-eru-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Yam-Fufu mit Eru</h3><p>Weißer Yam, Eru, Spinat, Palmöl, Rind · Spuren von Barrakuda und Garnelen</p></div><span class="price">22,00 €</span></li>
+          <li data-preview="img/dishes/garri-eru-900.webp"><img src="img/dishes/garri-eru-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Garri mit Eru</h3><p>Maniok, Eru, Spinat, Palmöl, Rind · Spuren von Barrakuda</p></div><span class="price">22,00 €</span></li>
+          <li data-preview="img/dishes/ekwang-900.webp"><img src="img/dishes/ekwang-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Ekwang</h3><p>Cocoyam, Weißkohl, Spinat, Palmöl, Rind, Mini-Garnelen, Champignons</p></div><span class="price">18,00 €</span></li>
+          <li data-preview="img/dishes/kwakoko-900.webp"><img src="img/dishes/kwakoko-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>E’kwakoko Weykoka &amp; BBQ-Garnelen</h3><p>Cocoyam-Klöße, Spinat, Barrakuda, Palmöl, Garnelen</p></div><span class="price">17,00 €</span></li>
+          <li data-preview="img/dishes/egusi-900.webp"><img src="img/dishes/egusi-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Egusi-Pudding mit Kochbanane</h3><p>Egusi, Kochbanane, Rind, frisches Gemüse</p></div><span class="price">25,00 €</span></li>
+          <li data-preview="img/dishes/jollof-900.webp"><img src="img/dishes/jollof-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Spicy Jollof-Reis</h3><p>Parboiled-Reis, Tomate, Salatgarnitur – mit Rind 21,00 € oder Hähnchen</p></div><span class="price">20,00 €</span></li>
+          <li data-preview="img/dishes/fish-plantain-900.webp"><img src="img/dishes/fish-plantain-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Gegrillte Stöcker mit Kochbanane</h3><p>Stöcker, Kochbanane, scharfer Dip, Salat</p></div><span class="price">25,00 €</span></li>
+          <li data-preview="img/dishes/fish-meyundo-900.webp"><img src="img/dishes/fish-meyundo-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Gegrillte Stöcker mit Meyundo</h3><p>Stöcker, Maniok, scharfer Dip, Salat</p></div><span class="price">26,00 €</span></li>
+          <li data-preview="img/dishes/seafood-900.webp"><img src="img/dishes/seafood-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Seafood</h3><p>Meeresfrüchte-Mix, scharfer Dip, Salat</p></div><span class="price">25,00 €</span></li>
+          <li data-preview="img/dishes/coconut-salmon-900.webp"><img src="img/dishes/coconut-salmon-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Kokosreis mit Lachs</h3><p>Wildreis, Kokosmilch, Karotte, grüne Bohnen</p></div><span class="price">22,00 €</span></li>
+          <li data-preview="img/dishes/coconut-beef-900.webp"><img src="img/dishes/coconut-beef-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Kokosreis mit Rind</h3><p>Wildreis, Kokosmilch, Champignons</p></div><span class="price">21,00 €</span></li>
+          <li data-preview="img/dishes/fried-rice-beef-900.webp"><img src="img/dishes/fried-rice-beef-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Gebratener Reis mit Rind</h3><p>Wildreis, Tomate, Champignons</p></div><span class="price">21,00 €</span></li>
+          <li data-preview="img/dishes/fried-rice-salmon-900.webp"><img src="img/dishes/fried-rice-salmon-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Gebratener Reis mit Lachs</h3><p>Karotte, grüne Bohnen, Lachs</p></div><span class="price">21,50 €</span></li>
+          <li data-preview="img/dishes/lamb-yam-900.webp"><img src="img/dishes/lamb-yam-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Lamm-Tomaten-Eintopf mit weißem Yam</h3><p>Lamm, Tomate, Karotte, grüne Bohnen</p></div><span class="price">24,00 €</span></li>
+          <li data-preview="img/dishes/lamb-soup-900.webp"><img src="img/dishes/lamb-soup-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Scharfe Lammsuppe mit Kochbanane</h3><p>Lamm, Gewürze, Kochbanane</p></div><span class="price">22,00 €</span></li>
+          <li><div><h3>Quinoa-Reis mit Hähnchen-Erdnuss-Eintopf</h3><p>Basmati, Quinoa, Erdnuss, Tomate, Champignons</p></div><span class="price">22,00 €</span></li>
+          <li><div><h3>Garri &amp; Okra-Suppe</h3><p>Maniok, Okra, Rind, Saisongemüse, Egusi</p></div><span class="price">19,50 €</span></li>
+          <li data-preview="img/dishes/doh-doh-900.webp"><img src="img/dishes/doh-doh-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Kidneybohnen-Eintopf mit Doh-Doh</h3><p>Rote Bohnen, gebratene Kochbanane, Tomate</p></div><span class="price">18,00 €</span></li>
+          <li data-preview="img/dishes/puff-puff-900.webp"><img src="img/dishes/puff-puff-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Kidneybohnen-Eintopf mit Puff-Puff</h3><p>Hefebällchen mit Mandelmilch, rote Bohnen, Tomate</p></div><span class="price">13,50 €</span></li>
+          <li data-preview="img/dishes/ravioli-900.webp"><img src="img/dishes/ravioli-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Ravioli mit Ricotta &amp; Spinat</h3><p>Tomate, Rucola, Ziegenkäse, Walnuss</p></div><span class="price">20,00 €</span></li>
+        </ul>
+      </div>
+
+      <div class="menu__panel" role="tabpanel" id="panel-vegan" aria-labelledby="tab-vegan" tabindex="0" hidden>
+        <ul class="dishes">
+          <li data-preview="img/dishes/kokki-900.webp"><img src="img/dishes/kokki-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Kokki-Bohnenpudding mit Kochbanane</h3><p>Augenbohnen, Spinat oder Mangold, Palmöl</p></div><span class="price">22,00 €</span></li>
+          <li data-preview="img/dishes/beetroot-rice-900.webp"><img src="img/dishes/beetroot-rice-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Rote-Bete-Reis mit Cashews</h3><p>Rote Bete, Wildreis, Karotte, Champignons, Brokkoli</p></div><span class="price">22,00 €</span></li>
+          <li data-preview="img/dishes/fufu-corn-900.webp"><img src="img/dishes/fufu-corn-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Fufu Corn &amp; Njama Njama mit Tofu</h3><p>Maismehl-Fufu, Saisongemüse, gegrillter Tofu</p></div><span class="price">22,00 €</span></li>
+          <li data-preview="img/dishes/grilled-veggies-900.webp"><img src="img/dishes/grilled-veggies-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Mediterranes Grillgemüse</h3><p>Zucchini, Aubergine, Paprika, Champignons, Oliven</p></div><span class="price">13,00 €</span></li>
+        </ul>
+      </div>
+
+      <div class="menu__panel" role="tabpanel" id="panel-vor" aria-labelledby="tab-vor" tabindex="0" hidden>
+        <ul class="dishes">
+          <li><div><h3>Sauerkraut mit Süßkartoffel</h3><p>Gruß aus der Küche</p></div><span class="price price--gift">gratis</span></li>
+          <li data-preview="img/dishes/spicy-soup-900.webp"><img src="img/dishes/spicy-soup-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Scharfe Suppe</h3><p>Karotte, Gewürze</p></div><span class="price">8,00 €</span></li>
+          <li data-preview="img/dishes/minestrone-900.webp"><img src="img/dishes/minestrone-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Minestrone</h3><p>Cannellini, Karotte, Zucchini, grüne Bohnen, Kartoffel, Grünkohl, Petersilie</p></div><span class="price">12,00 €</span></li>
+          <li data-preview="img/dishes/pumpkin-soup-900.webp"><img src="img/dishes/pumpkin-soup-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Kürbissuppe</h3><p>Karotte, Ingwer, Kokosmilch, Kürbiskerne</p></div><span class="price">13,00 €</span></li>
+          <li data-preview="img/dishes/beetroot-salad-900.webp"><img src="img/dishes/beetroot-salad-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Rote-Bete-Gurken-Salat</h3><p>Zwiebel, Dill, Kürbiskerne, Honig-Dressing</p></div><span class="price">16,00 €</span></li>
+          <li data-preview="img/dishes/tri-beans-900.webp"><img src="img/dishes/tri-beans-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Drei-Bohnen-Salat</h3><p>Schwarze, rote und Cannellini-Bohnen, Gurke, rote Zwiebel, Petersilie</p></div><span class="price">16,00 €</span></li>
+          <li data-preview="img/dishes/rainbow-salad-900.webp"><img src="img/dishes/rainbow-salad-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Rainbow Salad</h3><p>Rucola, Baby-Mangold, Spinat, Karotte, Granatapfel, Cashews</p></div><span class="price">12,00 €</span></li>
+          <li data-preview="img/dishes/chicken-salad-900.webp"><img src="img/dishes/chicken-salad-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Hähnchen-Salat</h3><p>Rucola, Tomate, Radieschen, Granatapfel, Kichererbsen, griechischer Joghurt</p></div><span class="price">19,50 €</span></li>
+          <li data-preview="img/dishes/beef-salad-900.webp"><img src="img/dishes/beef-salad-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Rindfleisch-Salat</h3><p>Rucola, Tomate, Radieschen, Granatapfel, Kichererbsen, Champignons</p></div><span class="price">20,00 €</span></li>
+        </ul>
+      </div>
+
+      <div class="menu__panel menu__panel--kids" role="tabpanel" id="panel-kinder" aria-labelledby="tab-kinder" tabindex="0" hidden>
+                <ul class="dishes">
+          <li><div><h3>„Mangrove Swamp“</h3><p>Kürbissuppe mit Ingwer und Kokosmilch</p></div><span class="price">5,00 €</span></li>
+          <li><div><h3>„Lake“</h3><p>Hülsenfrüchte-Suppe mit Gemüse</p></div><span class="price">8,00 €</span></li>
+          <li><div><h3>„Ocean“</h3><p>Gemüsesuppe mit Veggie-Rind-Nuggets</p></div><span class="price">13,00 €</span></li>
+          <li><div><h3>„Hot Rainbow“</h3><p>Süßkartoffel-Pommes, Nuggets, buntes Ofengemüse, Currysauce</p></div><span class="price">12,00 €</span></li>
+          <li><div><h3>„Planetary“</h3><p>Eierring mit Gemüsefüllung, Bohneneintopf, Kochbanane</p></div><span class="price">10,00 €</span></li>
+          <li><div><h3>„All Blue Zones in 1“</h3><p>Quinoa-Reis, Hackfleisch, Tomateneintopf</p></div><span class="price">14,75 €</span></li>
+          <li><div><h3>Simplicity+ Hähnchen / Lachs</h3><p>Gebratener Wild- und Basmatireis, Karotte, Saisongemüse</p></div><span class="price">12,00 / 15,00 €</span></li>
+          <li><div><h3>„Life Candy“ · „Fresh Rainbow“</h3><p>Obstsalat · bunter Gemüsesalat</p></div><span class="price">3,50 / 9,00 €</span></li>
+        </ul>
+      </div>
+
+      <div class="menu__panel" role="tabpanel" id="panel-snacks" aria-labelledby="tab-snacks" tabindex="0" hidden>
+        <ul class="dishes">
+          <li data-preview="img/dishes/golden-smoothie-900.webp"><img src="img/dishes/golden-smoothie-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Golden Smoothie</h3><p>Banane, Mango, Ingwer, Kurkuma, schwarzer Pfeffer, Mandelmilch</p></div><span class="price">8,90 €</span></li>
+          <li data-preview="img/dishes/blueberry-bowl-900.webp"><img src="img/dishes/blueberry-bowl-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Blaubeer-Rote-Bete-Bowl</h3><p>Blaubeere, Rote Bete, Limette, Mandelmilch, Joghurt</p></div><span class="price">9,90 €</span></li>
+          <li><div><h3>Bananen-Tahin-Kaffee-Smoothie</h3><p>Banane, Tahin, Mandelmilch, Kaffee, Spinat, Zimt</p></div><span class="price">9,90 €</span></li>
+          <li data-preview="img/dishes/doh-doh-900.webp"><img src="img/dishes/doh-doh-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Doh-Doh mit scharfem Dip</h3><p>Gebratene Kochbanane</p></div><span class="price">2,90 €</span></li>
+          <li data-preview="img/dishes/veggie-pie-900.webp"><img src="img/dishes/veggie-pie-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Gemüse-Pie</h3><p>Glutenfrei, mit Hafermehl</p></div><span class="price">4,90 €</span></li>
+          <li data-preview="img/dishes/mackerel-pie-900.webp"><img src="img/dishes/mackerel-pie-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Makrelen-Pie</h3><p>Teffmehl (glutenfrei), Olivenöl, Makrele</p></div><span class="price">4,00 €</span></li>
+          <li><div><h3>Sorbet: Mango, Banane oder Erdbeere</h3><p>Nur Frucht und ein Tropfen Vanille</p></div><span class="price">ab 3,80 €</span></li>
+          <li><div><h3>Apfel-Pie · Kochbananenbrot · Erdnuss-Bananen-Kuchen</h3><p>Glutenfrei, mit Datteln gesüßt</p></div><span class="price">je 4,90 €</span></li>
+        </ul>
+      </div>
+
+      <div class="menu__panel" role="tabpanel" id="panel-drinks" aria-labelledby="tab-drinks" tabindex="0" hidden>
+        <ul class="dishes">
+          <li data-preview="img/dishes/bissap-900.webp"><img src="img/dishes/bissap-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Bissap <small>hausgemacht · 0,3 l</small></h3><p>Hibiskus, Datteln, frischer Orangensaft</p></div><span class="price">5,90 €</span></li>
+          <li data-preview="img/dishes/ginger-900.webp"><img src="img/dishes/ginger-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Frischer Ingwer-Drink <small>hausgemacht · 0,3 l</small></h3><p>Ingwer, Datteln, frischer Orangensaft</p></div><span class="price">4,80 €</span></li>
+          <li data-preview="img/dishes/orange-900.webp"><img src="img/dishes/orange-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Frisch gepresster Orangensaft <small>0,3 l</small></h3><p>100 % Orange</p></div><span class="price">6,50 €</span></li>
+          <li data-preview="img/dishes/lemonade-900.webp"><img src="img/dishes/lemonade-480.webp" width="480" height="480" loading="lazy" alt=""><div><h3>Limonade <small>hausgemacht · 0,3 l</small></h3><p>Zitrone, Orange, Datteln</p></div><span class="price">4,80 €</span></li>
+          <li><div><h3>Tee: Ingwer, Zitrone oder Minze · Kaffee &amp; Kakao</h3><p>Frisch aufgegossen</p></div><span class="price">3,50 €</span></li>
+          <li><div><h3>Mineralwasser</h3><p>Still oder sprudelnd · 0,25 l / 0,75 l</p></div><span class="price">3,70 / 7,90 €</span></li>
+          <li><div><h3>Alkoholfreie Weine</h3><p>Riesling Freunde (weiß) · Doppio Tratto (rot) · 0,1 l / 0,2 l</p></div><span class="price">4,50 / 6,50 €</span></li>
+          <li><div><h3>Weine</h3><p>Grauer Burgunder Rivaner · Primitivo Sangiovese · 0,1 l / 0,2 l</p></div><span class="price">4,50 / 6,50 €</span></li>
+          <li><div><h3>Biere</h3><p>Guinness 5,00 € · Bitburger, Kölsch 3,50 € · alkoholfrei: Vita Malt, Erdinger, Jever 3,00 €</p></div><span class="price">ab 3,00 €</span></li>
+        </ul>
+      </div>
+      <img class="menu__preview" data-menu-preview alt="" width="900" height="900">
+    </section>
+
+    <!-- TELLER RESERVIEREN: Gericht-Bucher mit Küchenbon -->
+    <section class="reserve" id="reservieren" aria-labelledby="reserve-title">
+      <header class="reserve__head">
+        <h2 id="reserve-title" class="stagger"><span class="line">Teller</span> <span class="line"><em>reservieren.</em></span></h2>
+        <p>Wähle dein Gericht und deine Ankunftszeit. Die Küche plant danach – dein Teller ist fertig, wenn du dich setzt. Ab 20 Personen bitte an <a href="mailto:reservations@jambambo.com.de">reservations@jambambo.com.de</a>.</p>
+      </header>
+
+      <form class="booker" data-booker novalidate>
+        <div class="booker__main">
+          <nav class="bnav" aria-label="Schritte">
+            <button type="button" data-goto="1" aria-current="step"><span>1</span>Gericht</button>
+            <button type="button" data-goto="2"><span>2</span>Tag</button>
+            <button type="button" data-goto="3"><span>3</span>Ankunft</button>
+            <button type="button" data-goto="4"><span>4</span>Gäste</button>
+          </nav>
+
+          <section class="bpanel" data-panel="1" aria-label="Gericht wählen">
+            <ul class="plate-picks">
+              <li class="plate-pick" data-dish="Ndolé" data-price="22">
+                <button type="button" class="plate-pick__img" data-qty="1" aria-label="Ndolé hinzufügen"><img src="img/dishes/ndole-480.webp" width="480" height="480" alt="" loading="lazy"></button>
+                <div class="plate-pick__meta"><h4>Ndolé</h4><span class="price">22 €</span></div>
+                <div class="qty" role="group" aria-label="Anzahl Ndolé">
+                  <button type="button" data-qty="-1" aria-label="Eins weniger: Ndolé">−</button>
+                  <output aria-live="polite">0</output>
+                  <button type="button" data-qty="1" aria-label="Eins mehr: Ndolé">+</button>
+                </div>
+              </li>
+              <li class="plate-pick" data-dish="Eru & Yam-Fufu" data-price="22">
+                <button type="button" class="plate-pick__img" data-qty="1" aria-label="Eru &amp; Yam-Fufu hinzufügen"><img src="img/dishes/yam-fufu-eru-480.webp" width="480" height="480" alt="" loading="lazy"></button>
+                <div class="plate-pick__meta"><h4>Eru &amp; Yam-Fufu</h4><span class="price">22 €</span></div>
+                <div class="qty" role="group" aria-label="Anzahl Eru &amp; Yam-Fufu">
+                  <button type="button" data-qty="-1" aria-label="Eins weniger: Eru &amp; Yam-Fufu">−</button>
+                  <output aria-live="polite">0</output>
+                  <button type="button" data-qty="1" aria-label="Eins mehr: Eru &amp; Yam-Fufu">+</button>
+                </div>
+              </li>
+              <li class="plate-pick" data-dish="Ekwang" data-price="18">
+                <button type="button" class="plate-pick__img" data-qty="1" aria-label="Ekwang hinzufügen"><img src="img/dishes/ekwang-480.webp" width="480" height="480" alt="" loading="lazy"></button>
+                <div class="plate-pick__meta"><h4>Ekwang</h4><span class="price">18 €</span></div>
+                <div class="qty" role="group" aria-label="Anzahl Ekwang">
+                  <button type="button" data-qty="-1" aria-label="Eins weniger: Ekwang">−</button>
+                  <output aria-live="polite">0</output>
+                  <button type="button" data-qty="1" aria-label="Eins mehr: Ekwang">+</button>
+                </div>
+              </li>
+              <li class="plate-pick" data-dish="Egusi-Pudding" data-price="25">
+                <button type="button" class="plate-pick__img" data-qty="1" aria-label="Egusi-Pudding hinzufügen"><img src="img/dishes/egusi-480.webp" width="480" height="480" alt="" loading="lazy"></button>
+                <div class="plate-pick__meta"><h4>Egusi-Pudding</h4><span class="price">25 €</span></div>
+                <div class="qty" role="group" aria-label="Anzahl Egusi-Pudding">
+                  <button type="button" data-qty="-1" aria-label="Eins weniger: Egusi-Pudding">−</button>
+                  <output aria-live="polite">0</output>
+                  <button type="button" data-qty="1" aria-label="Eins mehr: Egusi-Pudding">+</button>
+                </div>
+              </li>
+              <li class="plate-pick" data-dish="Jollof-Reis" data-price="20">
+                <button type="button" class="plate-pick__img" data-qty="1" aria-label="Jollof-Reis hinzufügen"><img src="img/dishes/jollof-480.webp" width="480" height="480" alt="" loading="lazy"></button>
+                <div class="plate-pick__meta"><h4>Jollof-Reis</h4><span class="price">20 €</span></div>
+                <div class="qty" role="group" aria-label="Anzahl Jollof-Reis">
+                  <button type="button" data-qty="-1" aria-label="Eins weniger: Jollof-Reis">−</button>
+                  <output aria-live="polite">0</output>
+                  <button type="button" data-qty="1" aria-label="Eins mehr: Jollof-Reis">+</button>
+                </div>
+              </li>
+              <li class="plate-pick" data-dish="Kokki" data-price="22">
+                <button type="button" class="plate-pick__img" data-qty="1" aria-label="Kokki hinzufügen"><img src="img/dishes/kokki-480.webp" width="480" height="480" alt="" loading="lazy"></button>
+                <div class="plate-pick__meta"><h4>Kokki</h4><span class="price">22 €</span></div>
+                <div class="qty" role="group" aria-label="Anzahl Kokki">
+                  <button type="button" data-qty="-1" aria-label="Eins weniger: Kokki">−</button>
+                  <output aria-live="polite">0</output>
+                  <button type="button" data-qty="1" aria-label="Eins mehr: Kokki">+</button>
+                </div>
+              </li>
+              <li class="plate-pick" data-dish="Kokosreis & Lachs" data-price="22">
+                <button type="button" class="plate-pick__img" data-qty="1" aria-label="Kokosreis &amp; Lachs hinzufügen"><img src="img/dishes/coconut-salmon-480.webp" width="480" height="480" alt="" loading="lazy"></button>
+                <div class="plate-pick__meta"><h4>Kokosreis &amp; Lachs</h4><span class="price">22 €</span></div>
+                <div class="qty" role="group" aria-label="Anzahl Kokosreis &amp; Lachs">
+                  <button type="button" data-qty="-1" aria-label="Eins weniger: Kokosreis &amp; Lachs">−</button>
+                  <output aria-live="polite">0</output>
+                  <button type="button" data-qty="1" aria-label="Eins mehr: Kokosreis &amp; Lachs">+</button>
+                </div>
+              </li>
+              <li class="plate-pick" data-dish="Stöcker & Kochbanane" data-price="25">
+                <button type="button" class="plate-pick__img" data-qty="1" aria-label="Stöcker &amp; Kochbanane hinzufügen"><img src="img/dishes/fish-plantain-480.webp" width="480" height="480" alt="" loading="lazy"></button>
+                <div class="plate-pick__meta"><h4>Stöcker &amp; Kochbanane</h4><span class="price">25 €</span></div>
+                <div class="qty" role="group" aria-label="Anzahl Stöcker &amp; Kochbanane">
+                  <button type="button" data-qty="-1" aria-label="Eins weniger: Stöcker &amp; Kochbanane">−</button>
+                  <output aria-live="polite">0</output>
+                  <button type="button" data-qty="1" aria-label="Eins mehr: Stöcker &amp; Kochbanane">+</button>
+                </div>
+              </li>
+            </ul>
+          </section>
+          <section class="bpanel" data-panel="2" aria-label="Tag wählen" hidden>
+            <div class="days" data-days></div>
+            <p class="error" id="b-day-err" aria-live="polite"></p>
+          </section>
+          <section class="bpanel" data-panel="3" aria-label="Ankunftszeit wählen" hidden>
+            <div class="slots" data-slots></div>
+            <p class="error" id="b-time-err" aria-live="polite"></p>
+          </section>
+          <section class="bpanel" data-panel="4" aria-label="Gäste und Name" hidden>
+            <div class="guests">
+              <div class="stepper" data-stepper="adults">
+                <span id="g-adults">Erwachsene</span>
+                <div class="qty" role="group" aria-labelledby="g-adults">
+                  <button type="button" data-step="-1" aria-label="Eine Person weniger">−</button>
+                  <output aria-live="polite">2</output>
+                  <button type="button" data-step="1" aria-label="Eine Person mehr">+</button>
+                </div>
+              </div>
+              <div class="stepper" data-stepper="kids">
+                <span id="g-kids">Kinder</span>
+                <div class="qty" role="group" aria-labelledby="g-kids">
+                  <button type="button" data-step="-1" aria-label="Ein Kind weniger">−</button>
+                  <output aria-live="polite">0</output>
+                  <button type="button" data-step="1" aria-label="Ein Kind mehr">+</button>
+                </div>
+              </div>
+            </div>
+            <div class="fields">
+              <div class="field field--wide">
+                <label for="b-name">Name</label>
+                <input id="b-name" name="name" autocomplete="name" required>
+                <p class="error" id="b-name-err" aria-live="polite"></p>
+              </div>
+              <div class="field field--wide">
+                <label for="b-note">Anmerkungen</label>
+                <input id="b-note" name="note" placeholder="Allergien, Anlass, Kinderstuhl">
+              </div>
+            </div>
+          </section>
+
+          <div class="bpanel__nav">
+            <button type="button" class="link" data-prev>Zurück</button>
+            <button type="button" class="btn" data-next>Weiter</button>
+          </div>
+        </div>
+
+        <aside class="summary" aria-label="Deine Reservierung">
+          <h3>Deine Reservierung</h3>
+          <dl class="summary__rows">
+            <div><dt>Ankunft</dt><dd data-bon-when>–</dd></div>
+            <div><dt>Personen</dt><dd data-bon-guests>2 Erwachsene</dd></div>
+            <div><dt>Name</dt><dd data-bon-name>–</dd></div>
+          </dl>
+          <ul class="summary__items" data-bon-items></ul>
+          <p class="summary__total"><span>Summe</span><span data-bon-total>0,00 €</span></p>
+          <div class="summary__actions">
+            <button class="btn btn--lg" type="submit" data-channel="whatsapp">Per WhatsApp senden</button>
+            <button class="btn btn--ghost btn--lg" type="submit" data-channel="mail">Per E-Mail senden</button>
+            <p class="reserve__status" data-reserve-status aria-live="polite"></p>
+          </div>
+        </aside>
+      </form>
+    </section>
+
+    <!-- MEHR -->
+    <section class="more" id="mehr" aria-labelledby="more-title">
+      <h2 id="more-title" class="stagger"><span class="line">Mehr als</span> <span class="line"><em>ein Restaurant.</em></span></h2>
+      <div class="more__grid">
+        <article class="offer">
+          <div class="offer__media"><img src="img/place/buffet-800.webp" width="800" height="600" loading="lazy" alt="Buffet mit kamerunischen Gerichten"></div>
+          <h3>Catering &amp; Buffet</h3>
+          <p>Für Firmenfeiern, Geburtstage und Feste – geliefert oder bei uns. Vom Snack bis zum 3-Gänge-Buffet.</p>
+          <a class="link" href="mailto:info@jambambo.com.de?subject=Catering-Anfrage">Catering anfragen</a>
+        </article>
+        <article class="offer">
+          <div class="offer__media"><img src="img/place/seminar-800.webp" width="800" height="600" loading="lazy" alt="Gäste bei einem Seminar im Jambambo"></div>
+          <h3>Seminare &amp; Treffen</h3>
+          <p>Unser Gastraum bietet Platz für Workshops, Vereinsabende und Gruppen – mit Essen, das alle wach hält.</p>
+          <a class="link" href="mailto:reservations@jambambo.com.de?subject=Raum-Anfrage">Raum anfragen</a>
+        </article>
+        <article class="offer">
+          <div class="offer__media"><img src="img/place/room-800.webp" width="800" height="600" loading="lazy" alt="Gastraum des Jambambo"></div>
+          <h3>Gesundheitscoaching</h3>
+          <p>Enjoying Abundant Health Life: Nach einem Erstgespräch entwickeln wir gemeinsam einen Plan für Ernährung, Bewegung und Stress.</p>
+          <a class="link" href="mailto:contact@jambambo.com.de?subject=Coaching%20(EAHL)">Erstgespräch anfragen</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- BESUCH -->
+    <section class="visit" id="besuch" aria-labelledby="visit-title">
+      <div class="visit__photo" data-parallax>
+        <img src="img/place/front-1400.webp" srcset="img/place/front-800.webp 800w, img/place/front-1400.webp 1400w" sizes="(min-width: 60rem) 50vw, 100vw" width="1400" height="1050" loading="lazy" alt="Eingang des Jambambo an der Burgstraße in Bad Godesberg">
+      </div>
+      <div class="visit__info">
+        <h2 id="visit-title">Burgstraße 60</h2>
+        <p class="visit__city">53177 Bonn-Bad Godesberg, am Fuß des Godesbergs</p>
+        <dl class="hours">
+          <div><dt>Montag – Freitag</dt><dd>17 – 22 Uhr</dd></div>
+          <div><dt>Samstag &amp; Sonntag</dt><dd>12 – 22 Uhr</dd></div>
+        </dl>
+        <ul class="contact">
+          <li><a href="tel:+4922894495522">0228 94 49 55 22</a></li>
+          <li><a href="https://wa.me/4915219276190">WhatsApp</a></li>
+          <li><a href="mailto:info@jambambo.com.de">info@jambambo.com.de</a></li>
+        </ul>
+        <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Jambambo+Burgstra%C3%9Fe+60+53177+Bonn" target="_blank" rel="noopener">Route planen</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="site-footer__mark" aria-hidden="true">Jambambo</p>
+    <div class="site-footer__row">
+      <p>Healthy Food · Healthy Body · Healthy Planet</p>
+      <nav aria-label="Rechtliches und soziale Netzwerke">
+        <ul>
+          <li><a href="https://www.instagram.com/jambamborestaubar/" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=61586997204066" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.tiktok.com/@jambambo.restaura" rel="noopener">TikTok</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </nav>
+      <p>© 2026 Jambambo</p>
+    </div>
+  </footer>
+
+  <button class="tray-pill" type="button" data-tray-pill aria-haspopup="dialog" aria-controls="tray">
+    <span class="tray-pill__stack" data-tray-stack aria-hidden="true"></span>
+    <span class="tray-pill__text"><strong data-tray-title aria-live="polite">Teller reservieren</strong><small data-tray-sub></small></span>
+    <span class="tray-pill__go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5"/></svg></span>
+  </button>
+  <div class="tray-overlay" data-tray-overlay hidden></div>
+  <aside class="tray" id="tray" data-tray role="dialog" aria-modal="true" aria-labelledby="tray-title" hidden>
+    <header class="tray__head">
+      <h2 id="tray-title">Dein Teller</h2>
+      <button type="button" class="tray__close" data-tray-close aria-label="Schließen"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg></button>
+    </header>
+    <p class="tray__when">Ankunft <button type="button" data-tray-when-btn><span data-tray-when>Tag und Uhrzeit wählen</span></button></p>
+    <ul class="tray__list" data-tray-list></ul>
+    <footer class="tray__foot">
+      <p class="tray__total"><span>Summe</span><span data-tray-total>0,00 €</span></p>
+      <button type="button" class="btn btn--lg" data-tray-go>Weiter zur Reservierung</button>
+    </footer>
+  </aside>
+
+  <script src="vendor/gsap.min.js" defer></script>
+  <script src="vendor/ScrollTrigger.min.js" defer></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
